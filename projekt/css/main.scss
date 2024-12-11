@@ -1,0 +1,47 @@
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$font-size: 16px;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.layout {
+  font-family: Arial, sans-serif;
+  font-size: $font-size;
+
+  &__header {
+    background-color: $primary-color;
+    padding: 1em;
+
+    .menu {
+      &__list {
+        @include flex-center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        .menu__item {
+          margin: 0 1em;
+
+          a {
+            color: white;
+            text-decoration: none;
+            &:hover {
+              color: $secondary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__content {
+    padding: 2em;
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+  }
+}
